@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- text1 -->
+<section class="w3l-text-1">
+	<div class="text1">
+		<div class="wrapper">
+			<div class="text1-content">
+				<ol class="breadcrumb">
+					<li><a href="{% url 'product:product_list' %}"> Home <span class="sequence">&raquo;</span></a></li>
+					<li>{{product.category}}</li>     
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //text1 -->
+<section class="w3l-ecommerce-single">
+	<!--content-->
+	<div class="product">
+		<div class="wrapper-full">
+			<div class="d-grid ecommerce-align">
+
+				<div class="product-bottom">
+					<!--categories-->
+					<div class="categories">
+						<h3>Categories</h3>
+						<ul class="cate">
+							<li><a href="#products.html">Best Selling</a>
+								<span>(15)</span></li>
+							<li><a href="#products.html">Man</a>
+								<span>(16)</span></li>
+							<ul>
+								<li><a href="#products.html">Accessories</a>
+									<span>(2)</span></li>
+								<li><a href="#products.html">Coats &amp;
+										Jackets</a> <span>(5)</span></li>
+								<li><a href="#products.html">Jeans</a>
+									<span>(1)</span></li>
+								<li><a href="#products.html">New Arrivals</a>
+									<span>(0)</span></li>
+								<li></i><a href="products.html">Suits</a>
+									<span>(1)</span></li>
+								<li><a href="#products.html">Casual Shirts</a>
+									<span>(0)</span></li>
+							</ul>
+							<li><a href="#products.html">Sales</a>
+								<span>(15)</span></li>
+							<li><a href="#products.html">Woman</a>
+								<span>(15)</span></li>
+							<ul>
+								<li><a href="#products.html">Accessories</a>
+									<span>(2)</span></li>
+								<li><a href="#products.html">New Arrivals</a>
+									<span>(0)</span></li>
+								<li><a href="#products.html">Dresses</a>
+									<span>(1)</span></li>
+								<li><a href="#products.html">Casual Shirts</a>
+									<span>(0)</span></li>
+								<li><a href="#products.html">Shorts</a>
+									<span>(4)</span></li>
+							</ul>
+						</ul>
+					</div>
+					<!--//menu-->
+					<!--price-->
+					<div class="price">
+						<h3>Price Range</h3>
+						<div class="price-head d-grid align-price">
+							<div class="col-md-6 price-head1">
+								<div class="price-top1">
+									<span class="price-top">$</span>
+									<input type="text" value="0">
+								</div>
+							</div>
+							<div class="col-md-6 price-head2">
+								<div class="price-top1">
+									<span class="price-top">$</span>
+									<input type="text" value="500">
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<!--//price-->
+					<!--colors-->
+					<div class="colors">
+						<h3>Colors</h3>
+
+						<div class="color-top">
+							<ul>
+								<li><a href="#c"><i></i></a></li>
+								<li><a href="#c"><i class="color1"></i></a></li>
+								<li><a href="#c"><i class="color2"></i></a></li>
+								<li><a href="#c"><i class="color3"></i></a></li>
+								<li><a href="#c"><i class="color4"></i></a></li>
+								<li><a href="#c"><i class="color5"></i></a></li>
+								<li><a href="#c"><i class="color6"></i></a></li>
+								<li><a href="#c"><i class="color7"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+
+					<!--//colors-->
+					<div class="sellers">
+
+						<h3 class="best">BEST SELLERS</h3>
+						<div class="product-head">
+							<div class="product-go">
+								<div class=" fashion-grid">
+									<a href="ecommerce-single.html"><img class="img-responsive "
+											src="assets/images/pr1.jpg" alt=""></a>
+
+								</div>
+								<div class=" fashion-grid1">
+									<h6 class="best2"><a href="ecommerce-single.html">Lorem ipsum </a></h6>
+									<span class=" price-in1"> <del>$50.00</del>$40.00</span>
+									<p>The standard chunk of Lorem Ipsum used</p>
+								</div>
+
+								<div class="clear"> </div>
+							</div>
+							<div class="product-go">
+								<div class=" fashion-grid">
+									<a href="ecommerce-single.html"><img class="img-responsive "
+											src="assets/images/pr1.jpg" alt=""></a>
+
+								</div>
+								<div class=" fashion-grid1">
+									<h6 class="best2"><a href="ecommerce-single.html">Lorem ipsum </a></h6>
+									<span class=" price-in1"> <del>$50.00</del>$40.00</span>
+									<p>The standard chunk of Lorem Ipsum used</p>
+								</div>
+								<div class="clear"> </div>
+							</div>
+
+						</div>
+					</div>
+					<!---->
+				</div>
+				<div class="col-md-9 animated wow fadeInRight" data-wow-delay=".5s">
+					<div class="d-grid align-items">
+						<div class="single-right-left">
+							<div class="galleryContainer">
+                     
+            
+								<div class="gallery">
+									<input type="radio" name="controls" id="c1" checked=""><img class="galleryImage"
+										id="i1" src="{{product.face_image.url}}" alt="">
+								    <input type="radio" name="controls" id="c2"><img class="galleryImage" id="i2"
+										src="{{product.back_image.url}}" alt="">
+									<input type="radio" name="controls" id="c3"><img class="galleryImage" id="i3"
+										src="{{product.face_image.url}}" alt="">
+									<input type="radio" name="controls" id="c4"><img class="galleryImage" id="i4"
+										src="{{product.face_image.url}}" alt=""> 
+								</div>
+                                                  
+								<div class="thumbnails">
+									<label class="thumbnailImage" for="c1"><img src="{{product.face_image.url}}"
+											class="img" alt=""></label>
+									<label class="thumbnailImage" for="c2"><img src="{{product.back_image.url}}"
+											class="img" alt=""></label>
+									<label class="thumbnailImage" for="c3"><img src="{{product.face_image.url}}"
+											class="img" alt=""></label>
+									<label class="thumbnailImage" for="c4"><img src="{{product.face_image.url}}"
+											class="img" alt=""></label>
+								</div>            
+                        
+							</div>
+						</div>
+						<div class="single-right-left simpleCart_shelfItem">
+							<h3>{{product.name}}
+							</h3>
+							<div class="caption">
+
+								<ul class="rating-single">
+									<li>
+										<a href="#">
+											<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="fa fa-star yellow-star" aria-hidden="true"></span>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span class="fa fa-star-half-o yellow-star" aria-hidden="true"></span>
+										</a>
+									</li>
+								</ul>
+								<div class="clear"> </div>
+								<h6>
+									{{product.discount_price}}</h6>
+							</div>
+							<ul class="emi-views">
+									<li><span>Special Price</span> Get extra 5% off (price inclusive of discount)</li>
+									<li><span>Bank Offer</span> 5% Unlimited Cashback on Flipkart Axis Bank Credit Card</li>
+									<li><span>Bank Offer</span>  5% Cashback* on HDFC Bank Debit Cards</li>
+									<li><span>Bank Offer</span> Extra 5% off* with Axis Bank Buzz Credit Card</li>
+							</ul>
+							<div class="eco-buttons">
+								<a href="ecommerce-cart.html" class="action cart">Add to Cart </a>
+								<a href="#buy" class="action">Buy now </a>
+						</div>
+							<div class="desc_single">
+								<h5>Product Description:</h5>
+								<p>{{product.description}}</p>
+							</div>
+							<div class="d-flex justify-content-between">
+								<div class="occasional">
+									<h5 class="sp_title mb-3">Highlights:</h5>
+									<ul class="single_specific">
+										<li> Lorem:
+											<span>But i must</span>
+										</li>
+										<li> Ipsum
+											<span>Sed Layout design </span>
+										</li>
+										<li> Lorem:
+											<span>But i must</span>
+										</li>
+										<li> Ipsum
+											<span>Sed Layout design </span>
+										</li>
+
+									</ul>
+
+								</div>
+								<div class="color-quality">
+									<h5 class="sp_title">services:</h5>
+									<ul class="single_serv">
+										<li>
+											<a href="#">30 Day Return Policy</a>
+										</li>
+										<li class="gap">
+											<a href="#">Cash on Delivery available</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="description">
+								<h5>Check delivery, payment options and charges at your location</h5>
+								<form action="#" class="d-flex" method="post">
+									<input type="text" placeholder="Enter pincode" required="">
+									<input type="submit" value="Check">
+								</form>
+							</div>
+						</div>
+					</div>
+			
+					<div class="clear"> </div>
+					<h3 class="related">Related Products</h3>
+					<div class=" col-md-si mid-popular">
+						<div class="col-sm-4 item-grid simpleCart_shelfItem">
+								<div class="grid-pro">
+										<div class=" grid-product ">
+											<figure>
+												<a href="ecommerce-single.html">
+													<div class="grid-img">
+														<img src="assets/images/pr1.jpg" class="img-responsive" alt="">
+													</div>
+													<div class="grid-img">
+														<img src="assets/images/pr.jpg" class="img-responsive" alt="">
+													</div>
+												</a>
+											</figure>
+										</div>
+										<div class="women">
+											<a href="ecommerce-single.html"><img src="images/ll.png" alt=""></a>
+											<h6><a href="ecommerce-single.html">Product name goes here</a></h6>
+											<ul class="star">
+												<li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+												<li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+												<li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+												<li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+												<li><a href="ecommerce-single.html"><span class="fa fa-star-half-o"></span></a></li>
+											</ul>
+											<p><del>$149.00</del><em class="item_price">$99.00</em></p>
+											<a href="ecommerce-cart.html" data-text="Add to Cart" class="but-hover1 item_add">Add to Cart</a>
+										</div>
+									</div>
+						</div>
+
+
+						<div class="clear"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--//products-->
+</section>
+
+
+
+{% endblock body %}

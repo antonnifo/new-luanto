@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<!-- text1 -->
+<section class="w3l-text-1">
+	<div class="text1">
+		<div class="wrapper">
+			<div class="text1-content">
+				<ol class="breadcrumb">
+					<li><a href="#"> Home <span class="sequence">&raquo;</span></a></li>
+					<li>Products</li>     
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //text1 -->
+<!--content-->
+<div class="product">
+    <div class="wrapper-full">
+        <div class="d-grid ecommerce-align">
+            <div class="product-bottom">
+                <!--categories-->
+                <div class="categories">
+                    <h3>Categories</h3>
+                    <ul class="cate">
+                        <li><a href="#products.html">Best Selling</a>
+                            <span>(15)</span></li>
+                        <li><a href="#products.html">Man</a>
+                            <span>(16)</span></li>
+                        <ul>
+                            <li><a href="#products.html">Accessories</a>
+                                <span>(2)</span></li>
+                            <li><a href="#products.html">Coats &amp;
+                                    Jackets</a> <span>(5)</span></li>
+                            <li><a href="#products.html">Jeans</a>
+                                <span>(1)</span></li>
+                            <li><a href="#products.html">New Arrivals</a>
+                                <span>(0)</span></li>
+                            <li></i><a href="products.html">Suits</a>
+                                <span>(1)</span></li>
+                            <li><a href="#products.html">Casual Shirts</a>
+                                <span>(0)</span></li>
+                        </ul>
+                        <li><a href="#products.html">Sales</a>
+                            <span>(15)</span></li>
+                        <li><a href="#products.html">Woman</a>
+                            <span>(15)</span></li>
+                        <ul>
+                            <li><a href="#products.html">Accessories</a>
+                                <span>(2)</span></li>
+                            <li><a href="#products.html">New Arrivals</a>
+                                <span>(0)</span></li>
+                            <li><a href="#products.html">Dresses</a>
+                                <span>(1)</span></li>
+                            <li><a href="#products.html">Casual Shirts</a>
+                                <span>(0)</span></li>
+                            <li><a href="#products.html">Shorts</a>
+                                <span>(4)</span></li>
+                        </ul>
+                    </ul>
+                </div>
+                <!--//menu-->
+                <!--price-->
+                <div class="price">
+                    <h3>Price Range</h3>
+                    <div class="price-head d-grid align-price">
+                        <div class="col-md-6 price-head1">
+                            <div class="price-top1">
+                                <span class="price-top">$</span>
+                                <input type="text" value="0">
+                            </div>
+                        </div>
+                        <div class="col-md-6 price-head2">
+                            <div class="price-top1">
+                                <span class="price-top">$</span>
+                                <input type="text" value="500">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!--//price-->
+                <!--colors-->
+                <div class="colors">
+                    <h3>Colors</h3>
+
+                    <div class="color-top">
+                        <ul>
+                            <li><a href="#c"><i></i></a></li>
+                            <li><a href="#c"><i class="color1"></i></a></li>
+                            <li><a href="#c"><i class="color2"></i></a></li>
+                            <li><a href="#c"><i class="color3"></i></a></li>
+                            <li><a href="#c"><i class="color4"></i></a></li>
+                            <li><a href="#c"><i class="color5"></i></a></li>
+                            <li><a href="#c"><i class="color6"></i></a></li>
+                            <li><a href="#c"><i class="color7"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!--//colors-->
+                <div class="sellers">
+
+                    <h3 class="best">Best Sellers</h3>
+                    <div class="product-head">
+                        <div class="product-go">
+                            <div class=" fashion-grid">
+                                <a href="ecommerce-single.html"><img class="img-responsive " src="assets/images/pr1.jpg" alt=""></a>
+
+                            </div>
+                            <div class=" fashion-grid1">
+                                <h6 class="best2"><a href="ecommerce-single.html">Lorem ipsum </a></h6>
+                                <span class=" price-in1"> <del>$50.00</del>$40.00</span>
+                                <p>The standard chunk of Lorem Ipsum used</p>
+                            </div>
+
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="product-go">
+                            <div class=" fashion-grid">
+                                <a href="ecommerce-single.html"><img class="img-responsive " src="assets/images/pr1.jpg" alt=""></a>
+
+                            </div>
+                            <div class=" fashion-grid1">
+                                <h6 class="best2"><a href="ecommerce-single.html">Lorem ipsum </a></h6>
+                                <span class=" price-in1"> <del>$50.00</del>$40.00</span>
+                                <p>The standard chunk of Lorem Ipsum used</p>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!---->
+            </div>
+            <div class="animated wow fadeInRight" data-wow-delay=".5s">
+                <div class="mens-toolbar">
+                    <p>Showing 1–9 of 21 results</p>
+
+                    <p class="showing">Sorting By
+                        <select>
+                            <option value=""> Name</option>
+                            <option value=""> Rate</option>
+                            <option value=""> Color </option>
+                            <option value=""> Price </option>
+                        </select>
+                    </p>
+                    <p>Show
+                        <select>
+                            <option value=""> 9</option>
+                            <option value=""> 10</option>
+                            <option value=""> 11 </option>
+                            <option value=""> 12 </option>
+                        </select>
+                    </p>
+
+
+                    <div class="clear"></div>
+                </div>
+
+                <div class="mid-popular">
+                {% if products %}
+                    {% for item in products %}
+                     <div class="item-grid item-gr  simpleCart_shelfItem">
+                        <div class="grid-pro">
+                            <div class=" grid-product ">
+                                <figure>
+                                    <a href="{{item.get_absolute_url}}">
+                                        <div class="grid-img">
+                                            <img src="{{item.back_image.url}}" class="img-responsive" alt="">
+                                        </div>                                    
+                                        <div class="grid-img">
+                                            <img src="{{item.face_image.url}}" class="img-responsive" alt="">
+                                        </div>
+
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="women">
+                                <a href="{{item.get_absolute_url}}"><img src="{% static 'images/ll.png' %}" alt=""></a>
+                                <h6><a href="{{item.get_absolute_url}}">{{item.name}}</a></h6>
+                                <ul class="star">
+                                    <li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+                                    <li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+                                    <li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+                                    <li><a href="ecommerce-single.html"><span class="fa fa-star"></span></a></li>
+                                    <li><a href="ecommerce-single.html"><span class="fa fa-star-half-o"></span></a></li>
+                                </ul>
+                                <p><del>KSH {{item.original_price}}</del><em class="item_price">KSH {{item.discount_price}}</em></p>
+                                <a href="ecommerce-cart.html" data-text="Add to Cart" class="but-hover1 item_add">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>                                    
+                    {% endfor %}
+                
+                
+                {% else %}
+                <p> No products available at the moment</p>
+                
+                {% endif %}
+
+
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--//products-->
+
+
+{% endblock body %}
