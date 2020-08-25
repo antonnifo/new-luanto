@@ -38,8 +38,10 @@ export_to_csv.short_description = 'Export to CSV'
 class CategoryAdmin(admin.ModelAdmin):
 
     list_display = ['id', 'slug', 'name', 'sub_category']
+    list_filter = ['name']
     prepopulated_fields = {'slug': ('sub_category',)}
     list_editable = ['name','sub_category']
+    list_per_page = 10
 
 
 class ProducImageInline(admin.TabularInline):
@@ -52,10 +54,10 @@ class ProducImageInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ['name', 'original_price', 'discount_price',
-                    'available', 'category', 'updated','on_offer']
+    list_display = ['name', 'price',
+                    'available', 'category', 'updated']
     list_filter = ['available', 'category', 'updated']
-    list_editable = ['original_price', 'discount_price', 'available','on_offer']
+    list_editable = ['price', 'available']
     prepopulated_fields = {'slug': ('name',)}
     inlines = [ProducImageInline]
     actions = [export_to_csv]
