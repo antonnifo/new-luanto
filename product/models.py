@@ -13,16 +13,19 @@ class Category(models.Model):
             ("Men","Men"),
             ("Women","Women"),         
             ("Kids","Kids"),         
+            ("Home","Home"),         
+                 
         )
         name = models.CharField(max_length=200,
                 db_index=True, choices=CATEGORY_CHOICES)
-
+                
+        sub_category = models.CharField(max_length=200, db_index=True) 
         slug = models.SlugField(max_length=200,
                     unique=True)
 
         image = models.ImageField(upload_to='category/', blank=True, null=True)
 
-        sub_category = models.CharField(max_length=200, db_index=True) 
+
         class Meta:
             ordering = ('name',)
             verbose_name = 'category'
@@ -46,15 +49,12 @@ class Product(models.Model):
                             on_delete=models.CASCADE)
     name        = models.CharField(max_length=200, db_index=True)
     slug        = models.SlugField(max_length=200, db_index=True)
-    face_image  = models.ImageField(upload_to='products/%Y/%m/%d',
-                                 blank=True)
-    back_image  = models.ImageField(upload_to='products/%Y/%m/%d',
-                                 blank=True)                                 
+    sku         = models.CharField(max_length=200)
+    photo       = models.ImageField(upload_to='products/%Y/%m/%d',
+                                 blank=True)                                
     description = models.TextField(blank=True)
-    original_price = models.DecimalField(max_digits=10, decimal_places=2)
-    discount_price = models.DecimalField(max_digits=10, decimal_places=2)
+    price       = models.DecimalField(max_digits=10, decimal_places=2)
     available   = models.BooleanField(default=True)
-    on_offer    = models.BooleanField(default=False)
     created     = models.DateTimeField(auto_now_add=True)
     updated     = models.DateTimeField(auto_now=True)
     
