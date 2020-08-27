@@ -13,12 +13,31 @@ def index(request):
         })
 
 
-def product_list(request):
+def product_list(request, category_slug=None):
+ 
+    def get_category(name):
+        return Category.objects.filter(name=name)
 
+    products   = PRODUCTS
+
+    category   = None
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        products = products.filter(category=category)
    
     return render(request,
       'product/product_list.html',
-      {"products" : PRODUCTS})
+      {
+        "products" : products,
+        "Men": get_category('Men'),
+        "Women": get_category('Women'),
+        "Kids": get_category('Kids'),
+        "Home": get_category('Home'),
+        "category" : category
+
+      })
+
+
 
 def product_detail(request, id, slug):
 
