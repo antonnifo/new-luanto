@@ -5,7 +5,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Luantoo</title>
+
+    <title>{% block title %} Luantoo {% endblock title %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -43,16 +44,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link active" href="index.html">Home</a>
+                  <!-- Link--><a class="nav-link active" href="{% url 'product:home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="shop.html">Shop</a>
+                  <!-- Link--><a class="nav-link" href="{% url 'product:product_list' %}">Shop</a>
                 </li>
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link" href="detail.html">Product detail</a>
+                  {% comment %} <!-- Link--><a class="nav-link" href="#">Product detail</a> {% endcomment %}
                 </li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                  <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown"><a class="dropdown-item border-0 transition-link" href="index.html">Homepage</a><a class="dropdown-item border-0 transition-link" href="shop.html">Category</a><a class="dropdown-item border-0 transition-link" href="detail.html">Product detail</a><a class="dropdown-item border-0 transition-link" href="cart.html">Shopping cart</a><a class="dropdown-item border-0 transition-link" href="checkout.html">Checkout</a></div>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Help Center</a>
+                  <div class="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
+                  <a class="dropdown-item border-0 transition-link" href="#">FAQ</a>
+                  <a class="dropdown-item border-0 transition-link" href="#">Contact Us</a>
+                 </div>
                 </li>
               </ul>
               <ul class="navbar-nav ml-auto">               
@@ -123,6 +127,33 @@
       <script src="{% static 'vendor/owl.carousel2/owl.carousel.min.js' %}"></script>
       <script src="{% static 'vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js' %}"></script>
       <script src="{% static 'js/front.js' %}"></script>
+
+      <!-- Nouislider Config-->
+      <script>
+        var range = document.getElementById('range');
+        noUiSlider.create(range, {
+            range: {
+                'min': 0,
+                'max': 2000
+            },
+            step: 5,
+            start: [100, 1000],
+            margin: 300,
+            connect: true,
+            direction: 'ltr',
+            orientation: 'horizontal',
+            behaviour: 'tap-drag',
+            tooltips: true,
+            format: {
+              to: function ( value ) {
+                return 'Ksh' + value;
+              },
+              from: function ( value ) {
+                return value.replace('', '');
+              }
+            }
+        });
+       </script>
       <script>
         // ------------------------------------------------------- //
         //   Inject SVG Sprite - 
