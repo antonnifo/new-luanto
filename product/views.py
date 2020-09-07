@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Category, ProductImage
 from django.db.models import Count
+from cart.forms import CartAddProductForm
 
 
 PRODUCTS = Product.is_available.all()
@@ -54,11 +55,13 @@ def product_detail(request, id, slug):
                         .exclude(id=product.id)
 
     related_products = related_products.annotate(same_tags=Count('tags')).order_by('-same_tags','-updated')[:4]
+    cart_product_form = CartAddProductForm()
     return render(request,
               'product/product_detail.html',
               {
                   'product': product, 
                   'product_images': ProductImage.objects.filter(product=product),
                   'tags': product.tags.all(),
-                  'related_products' :  related_products,            
+                  'related_products' :  related_products,
+                  'cart_product_form': cart_product_form,            
                })

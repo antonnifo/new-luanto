@@ -4,8 +4,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('', include('product.urls', namespace='product')),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('', include('product.urls', namespace='product')),  
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
